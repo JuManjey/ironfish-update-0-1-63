@@ -1,0 +1,8 @@
+wget -q -O ironfish.sh https://api.nodes.guru/ironfish.sh && chmod +x ironfish.sh && sudo /bin/bash ironfish.sh
+
+sudo systemctl stop ironfishd
+ironfish migrations:start
+sudo systemctl restart ironfishd
+
+sudo systemctl stop ironfishd && wget -O $HOME/.ironfish/hosts.json https://raw.githubusercontent.com/Pa1amar/testnets/main/ironfish/hosts.json && sudo systemctl start ironfishd
+sudo systemctl restart ironfishd
